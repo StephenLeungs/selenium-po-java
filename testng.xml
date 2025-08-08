@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="1" preserve-order="true" name="RegisterAndLoginTest">
+        <classes>
+            <class name="com.stephen.testcases.TestLogin">
+                <methods>
+                    <include name="testRegister"/>
+                    <include name="testLogin"/>
+                </methods>
+            </class>
+            <class name="com.stephen.testcases.TestCookieCheck">
+                <methods>
+                    <include name="testCookieCheck"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.err</target>
+        <!--定义控制台输出格式(格式化输出)-->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %c [%thread] : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--定义输出格式-->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>utf-8</charset>
+        </encoder>
+
+        <file>D:/logback-test/logback-test.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--定义文件滚动时的文件名的格式-->
+            <fileNamePattern>D:/logback-test/logback-test-%d{yyyy-MMdd}.log%i.gz</fileNamePattern>
+            <maxFileSize>1MB</maxFileSize>
+        </rollingPolicy>
+    </appender>
+
+    <!--root是默认的logger 这里设定输出级别是WARN-->
+    <root level="WARN">
+        <!--关联appender，日志会通过往appender里面写-->
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+
+
+</configuration>

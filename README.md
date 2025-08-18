@@ -143,11 +143,15 @@ selenium-po/
 
 ### **PO模型分层架构**
 
+```mermaid
 graph TD
-    A[Base层] -->|被继承| B[Operation层]
-    C[Page层] -->|提供元素| B
-    B -->|调用| D[TestCases层]
-    E[Utils层] -->|支持| D
+ A[Base层] -->|被继承| B[Operation层]
+ C[Page层] -->|提供元素| B
+ B -->|调用| D[TestCases层]
+ E[Utils层] -->|支持| D
+```
+
+
 
 ### 1. 核心组件
 

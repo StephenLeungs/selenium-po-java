@@ -44,8 +44,6 @@ public class BaseAction {
      *
      * @param by 元素定位器 (不能为null) / Element locator (cannot be null)
      * @return 定位到的页面元素 / Located page element
-     * @throws org.openqa.selenium.TimeoutException 如果元素未在超时时间内出现
-     *         if element not present within timeout
      */
     public WebElement findEle(By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -64,8 +62,6 @@ public class BaseAction {
      *
      * @param by 元素定位器 (不能为null) / Element locator (cannot be null)
      * @param text 需要输入的文本内容 (null会被转换为空字符串) / Text to input (null converts to empty string)
-     * @throws org.openqa.selenium.ElementNotInteractableException 如果元素不可交互
-     *         if element exists but is not interactable
      */
     public void input(By by, String text) {
         String inputText = (text == null) ? "" : text;
@@ -73,7 +69,17 @@ public class BaseAction {
         element.sendKeys(inputText);
     }
 
-
+    /**
+     * 清除文本 / Clear Text
+     *
+     * <p>
+     * 清除输入框内的文本
+     * <br>
+     * Clears the text content in an input field element.
+     * </p>
+     *
+     * @param by 元素定位器（不能为null） / Element locator (cannot be null)
+     */
     public void clearText(By by) {
         WebElement element = findEle(by);
         element.clear();
@@ -89,8 +95,6 @@ public class BaseAction {
      * </p>
      *
      * @param by 元素定位器 (不能为null) / Element locator (cannot be null)
-     * @throws org.openqa.selenium.ElementNotInteractableException 如果元素不可点击
-     *         if element exists but is not clickable
      */
     public void click(By by) {
         WebElement element = findEle(by);
@@ -107,8 +111,6 @@ public class BaseAction {
      * </p>
      *
      * @param frame 目标frame的ID值或name值 / Target frame ID or name
-     * @throws org.openqa.selenium.NoSuchFrameException 如果frame不存在
-     *         if frame does not exist
      */
     public void switchToFrame(String frame){
         driver.switchTo().frame(frame);
@@ -153,8 +155,6 @@ public class BaseAction {
      * </p>
      *
      * @param by 复选框元素定位器 (不能为null) / Checkbox element locator (cannot be null)
-     * @throws org.openqa.selenium.ElementNotInteractableException 如果元素不可交互
-     *         if element exists but is not interactable
      */
     public void selectCheckbox(By by) {
         WebElement element = findEle(by);
@@ -162,5 +162,4 @@ public class BaseAction {
             element.click();
         }
     }
-
 }

@@ -1,38 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-
+    <!-- 控制台日志输出器 / Console Log Appender -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 日志输出目标 / Log output target -->
         <target>System.err</target>
-        <!--定义控制台输出格式(格式化输出)-->
+
+        <!--
+            定义控制台输出格式(格式化输出) / Define console output format (formatted output)
+            Pattern:
+                %d{yyyy-MM-dd HH:mm:ss.SSS} - 日期时间 / Date time
+                [%-5level] - 日志级别(5字符左对齐) / Log level (5 chars, left-aligned)
+                %c - 日志来源类 / Logger class
+                [%thread] - 线程名 / Thread name
+                : %msg - 日志消息 / Log message
+                %n - 换行符 / Newline
+        -->
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %c [%thread] : %msg%n</pattern>
         </encoder>
     </appender>
 
+    <!-- 文件日志输出器 / File Log Appender -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--定义输出格式-->
+        <!--
+            定义文件输出格式 / Define file output format
+            Pattern:
+                %d{yyyy-MM-dd HH:mm:ss.SSS} - 日期时间 / Date time
+                [%thread] - 线程名 / Thread name
+                %-5level - 日志级别(5字符左对齐) / Log level (5 chars, left-aligned)
+                %logger{36} - 日志来源类(最大36字符) / Logger class (max 36 chars)
+                - %msg - 日志消息 / Log message
+                %n - 换行符 / Newline
+        -->
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <!-- 文件编码 / File encoding -->
             <charset>utf-8</charset>
         </encoder>
 
+        <!-- 日志文件路径 / Log file path -->
         <file>D:/logback-test/logback-test.log</file>
 
+        <!-- 滚动策略 / Rolling policy -->
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <!--定义文件滚动时的文件名的格式-->
+            <!--
+                定义文件滚动时的文件名的格式 / Define filename pattern when rolling
+                %d{yyyy-MMdd} - 日期格式 / Date format
+                %i - 索引号(当文件超过最大尺寸时) / Index number (when file exceeds max size)
+            -->
             <fileNamePattern>D:/logback-test/logback-test-%d{yyyy-MMdd}.log%i.gz</fileNamePattern>
-            <maxFileSize>1MB</maxFileSize>
+            <!-- 单个日志文件最大尺寸 / Maximum file size per log file -->
+            <maxFileSize>5MB</maxFileSize>
         </rollingPolicy>
     </appender>
 
-    <!--root是默认的logger 这里设定输出级别是WARN-->
+    <!--
+        root是默认的logger 设定输出级别是WARN /
+        Root logger (default) with output level set to WARN
+    -->
     <root level="WARN">
-        <!--关联appender，日志会通过往appender里面写-->
+        <!--
+            关联appender，日志会往appender里面写 /
+            Associated appenders - logs will be written to these appenders
+        -->
         <appender-ref ref="FILE"/>
         <appender-ref ref="CONSOLE"/>
     </root>
-
-
 
 </configuration>

@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--
+    测试套件 / Test Suite
+    All Test Suite
+-->
 <suite name="All Test Suite">
+    <!--
+        测试集 / Test Set
+        RegisterAndLoginTest
+    -->
     <test verbose="1" preserve-order="true" name="RegisterAndLoginTest">
+        <!--
+            测试类集合 / Test Class Collection
+        -->
         <classes>
+            <!--
+                包含的测试类TestLogin / Included Test Class: TestLogin
+            -->
             <class name="com.stephen.testcases.TestLogin">
+                <!--
+                    该测试类里面的测试方法 / Test Methods in this Class
+                -->
                 <methods>
                     <include name="testRegister"/>
                     <include name="testLogin"/>
                 </methods>
             </class>
+            <!--
+                包含的测试类TestCookieCheck / Included Test Class: TestCookieCheck
+            -->
             <class name="com.stephen.testcases.TestCookieCheck">
+                <!--
+                    该测试类里面的测试方法 / Test Methods in this Class
+                -->
                 <methods>
                     <include name="testCookieCheck"/>
                 </methods>

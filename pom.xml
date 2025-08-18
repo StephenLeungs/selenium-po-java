@@ -4,22 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 项目基本信息 / Project Basic Information -->
     <groupId>org.example</groupId>
     <artifactId>SeleniumTest</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- 项目属性配置 / Project Properties Configuration -->
     <properties>
-        <!-- 明确指定JDK版本 -->
+        <!-- 明确指定JDK版本为1.8 / Explicitly set JDK version to 1.8 -->
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <!-- 文件编码 -->
+        <!-- 文件编码 / File Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <argLine>-Dfile.encoding=UTF-8</argLine>
 
-        <!-- 依赖版本控制 -->
+        <!-- 依赖版本控制 / Dependency Version Control -->
         <testng.version>7.8.0</testng.version>
         <selenium.version>4.11.0</selenium.version>
         <slf4j.version>1.7.36</slf4j.version>
@@ -27,12 +29,13 @@
         <poi.version>5.2.5</poi.version>
         <webdrivermanager.version>5.6.4</webdrivermanager.version>
 
-        <!-- 新增日志/CDP版本 -->
+        <!-- 新增日志/CDP版本 / Additional Logging/CDP Versions -->
         <log4j2.version>2.20.0</log4j2.version>
     </properties>
 
+    <!-- 项目依赖 / Project Dependencies -->
     <dependencies>
-        <!-- 测试框架 -->
+        <!-- 测试框架 / Testing Framework -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -40,12 +43,12 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Selenium 核心 -->
+        <!-- Selenium 核心 / Selenium Core -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
-            <!-- 排除冲突的日志依赖 -->
+            <!-- 排除冲突的日志依赖 / Exclude conflicting logging dependencies -->
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>
@@ -58,7 +61,7 @@
             </exclusions>
         </dependency>
 
-        <!-- 日志系统 -->
+        <!-- 日志系统 / Logging System -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -71,7 +74,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- 修复日志系统警告 -->
+        <!-- 修复日志系统警告 / Fix logging system warnings -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
@@ -83,7 +86,7 @@
             <version>${log4j2.version}</version>
         </dependency>
 
-        <!-- Excel 处理 -->
+        <!-- Excel 处理 / Excel Processing -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -95,7 +98,7 @@
             <version>${poi.version}</version>
         </dependency>
 
-        <!-- 浏览器驱动管理 -->
+        <!-- 浏览器驱动管理 / Browser Driver Management -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -104,9 +107,10 @@
         </dependency>
     </dependencies>
 
+    <!-- 构建配置 / Build Configuration -->
     <build>
         <plugins>
-            <!-- 编译器插件 -->
+            <!-- 编译器插件 / Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -120,13 +124,14 @@
                 </configuration>
             </plugin>
 
-            <!-- 测试执行插件 -->
+            <!-- 测试执行插件 / Test Execution Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
                     <suiteXmlFiles>
+                        <!-- 指定TestNG配置文件 / Specify TestNG configuration file -->
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>${argLine}</argLine>
@@ -137,7 +142,7 @@
                 </configuration>
             </plugin>
 
-            <!-- 资源文件处理 -->
+            <!-- 资源文件处理插件 / Resource File Processing Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>

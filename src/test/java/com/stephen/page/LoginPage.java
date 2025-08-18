@@ -77,7 +77,11 @@ public class LoginPage {
     public static final By CONFIRM_BUTTON = By.cssSelector("#submitBtn");
 
     /**
-     * 进行注册或登录操作后的消息文本
+     * 进行注册或登录操作后的消息文本 / Message text after registration or login operation
+     * <p>
+     * CSS选择器: #message<br>
+     * CSS selector: #message
+     * </p>
      */
     public static final By MESSAGE = By.cssSelector("#message");
 

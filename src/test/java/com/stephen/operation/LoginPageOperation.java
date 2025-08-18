@@ -100,21 +100,38 @@ public class LoginPageOperation extends BaseAction {
     }
 
     /**
-     * 获取消息文本
+     * 获取消息文本 / Gets message text
+     * <p>
+     * 调用父类getText()方法，获取注册或登录操作后，页面上的提示信息文本（用于断言）<br>
+     * Invokes parent getText() method to retrieve notification text after
+     * registration or login operation (used for assertions).
+     * </p>
      *
-     * @return
+     * @return 注册或登录结果提示文本 / Notification text of registration or login result
      */
     public String getMessage() {
         return super.getText(LoginPage.MESSAGE);
     }
 
+    /**
+     * 清除账号输入框内的文本内容 / Clears text in username input field
+     * <p>
+     * 调用父类clearText()方法，清除账号输入框内的文本内容<br>
+     * Invokes parent clearText() method to clear text in username input field.
+     * </p>
+     */
     public void clearUsername() {
         super.clearText(LoginPage.USERNAME);
     }
 
+    /**
+     * 清除密码输入框内的文本内容 / Clears text in password input field
+     * <p>
+     * 调用父类clearText()方法，清除密码输入框内的文本内容<br>
+     * Invokes parent clearText() method to clear text in password input field.
+     * </p>
+     */
     public void clearPassword() {
         super.clearText(LoginPage.PASSWORD);
     }
-
-
 }

@@ -102,7 +102,9 @@ selenium-po/
 
 1. **注册登录页**  
    
-   ![](docs/image/login-register-page.png)访问地址：`http://127.0.0.1:8080/login`
+   ![](docs/image/login-register-page.png)
+   
+   访问地址：`http://127.0.0.1:8080/login`
 
 2. **登录态检查页**  
    

@@ -1,4 +1,4 @@
-# ***中文版README指南（English README available below）***
+# ***此文档为中文版README指南，英文README指南请点击下方链接（English README available below）***
 
 [English README Documentation](README.en.md)
 
@@ -54,6 +54,8 @@ selenium-po/
 └── testng.xml      # TestNG配置
 ```
 
+## 
+
 ## 📜 许可证说明
 
 > ⚠️ **重要法律声明**  
@@ -77,6 +79,8 @@ selenium-po/
 > 
 > 📄 完整条款详见 [LICENSE 文件](LICENSE)
 
+## 
+
 ## 前言
 
 ### 1. 开发初衷
@@ -94,6 +98,8 @@ selenium-po/
 | **日志框架**      | logging  | logback          |
 | **浏览器驱动管理**   | 手动下载     | WebDriverManager |
 
+## 
+
 ## 🚀 快速启动指南
 
 ### 调试网页说明
@@ -102,7 +108,7 @@ selenium-po/
 
 1. **注册登录页**  
    
-   ![](docs/image/login-register-page.png)
+   <img src="docs/image/login-register-page.png" title="" alt="" width="668">
    
    访问地址：`http://127.0.0.1:8080/login`
 
@@ -139,6 +145,8 @@ selenium-po/
 
 > **注意**：首次运行会自动下载Chrome驱动，浏览器更新后会重新下载
 
+## 
+
 ## 🧱 框架封装解析
 
 ### **PO模型分层架构**
@@ -150,8 +158,6 @@ graph TD
  B -->|调用| D[TestCases层]
  E[Utils层] -->|支持| D
 ```
-
-
 
 ### 1. 核心组件
 
@@ -213,7 +219,7 @@ public void clickRegisterRadioButton() {
  * 2. Browser version update causes driver version mismatch
  * </p>
  *
- * @return WebDriver 浏览器实例对象 / Browser instance object
+ * @return WebDriver 浏览器实例对象 / WebDriver instance
  */
 public static WebDriver getDriver() {
     //设置环境变量指定Chrome浏览器驱动的中国地区镜像下载地址（中国地区以外的开发者请去掉System.setProperty()方法的调用，避免下载速度过慢）
@@ -222,7 +228,7 @@ public static WebDriver getDriver() {
             "https://registry.npmmirror.com/binary.html?path=chrome-for-testing/");
 
     //获取浏览器对象并使浏览器窗口最大化
-    //Acquires browser instance and maximizes browser window
+    //Acquires WebDriver instance and maximizes browser window
     WebDriverManager.chromedriver().setup();
     WebDriver driver = new ChromeDriver();
     driver.manage().window().maximize();
@@ -241,7 +247,7 @@ public void testRegister(String username, String password, String confirmPasswor
 }
 ```
 
-### 2. 设计依据
+### 2. 页面元素page和页面操作operation解耦封装的设计依据
 
 根据[Selenium官方设计模式](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/)：
 

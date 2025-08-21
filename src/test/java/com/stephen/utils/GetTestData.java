@@ -28,7 +28,7 @@ public class GetTestData {
      *
      * @param excelPath Excel文件路径 / Excel file path
      * @param sheet Excel文件内需要读取的sheet的名称 / Sheet name to read
-     * @return 提供给DataProvider的存放测试数据的Object二维数组 / 2D Object array containing test data for DataProvider
+     * @return 提供给DataProvider的存放测试数据的Object二维数组 / two-dimensional Object array containing test data for DataProvider
      */
     public static Object[][] getDataFromExcel(String excelPath, String sheet) {
         try (Workbook workbook = WorkbookFactory.create(new File(excelPath))) {

@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Set;
 
 /**
- * 浏览器工具类 / Browser Utility Class
+ * 浏览器工具类 / WebDriver Utility Class
  *
  * <p>
  * 用于管理浏览器（打开浏览器、关闭浏览器、添加Cookie等操作）<br>
@@ -34,7 +34,7 @@ public class DriverUtils {
      * 2. Browser version update causes driver version mismatch
      * </p>
      *
-     * @return WebDriver 浏览器实例对象 / Browser instance object
+     * @return WebDriver 浏览器实例对象 / WebDriver instance
      */
     public static WebDriver getDriver() {
         //设置环境变量指定Chrome浏览器驱动的中国地区镜像下载地址（中国地区以外的开发者请去掉System.setProperty()方法的调用，避免下载速度过慢）
@@ -43,7 +43,7 @@ public class DriverUtils {
                 "https://registry.npmmirror.com/binary.html?path=chrome-for-testing/");
 
         //获取浏览器对象并使浏览器窗口最大化
-        //Acquires browser instance and maximizes browser window
+        //Acquires WebDriver instance and maximizes browser window
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -58,7 +58,7 @@ public class DriverUtils {
      * Closes browser after 3 seconds delay
      * </p>
      *
-     * @param driver 浏览器实例对象 / Browser instance object
+     * @param driver 浏览器实例对象 / WebDriver instance
      */
     public static void quitDriver(WebDriver driver){
         try {
@@ -80,7 +80,7 @@ public class DriverUtils {
      * used for subsequent login status bypass
      * </p>
      *
-     * @param driver 浏览器实例对象 / Browser instance object
+     * @param driver 浏览器实例对象 / WebDriver instance
      */
     public static void getAllCookie(WebDriver driver) {
         cookies = driver.manage().getCookies();
@@ -94,7 +94,7 @@ public class DriverUtils {
      * Iterates through cookie Set collection and adds cookies to current browser
      * </p>
      *
-     * @param driver 浏览器实例对象 / Browser instance object
+     * @param driver 浏览器实例对象 / WebDriver instance
      */
     public static void addAllCookie(WebDriver driver){
         for (Cookie cookie : cookies) {

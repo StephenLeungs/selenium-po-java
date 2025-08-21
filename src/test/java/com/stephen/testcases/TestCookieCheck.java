@@ -22,7 +22,7 @@ public class TestCookieCheck {
     //日志器 / Logger
     public static final Logger LOGGER = LoggerFactory.getLogger("TestCookieCheck.class");
 
-    //浏览器实例对象 / Browser instance object
+    //浏览器实例对象 / WebDriver instance
     WebDriver driver;
 
     //登录态检查页面操作类实例对象 / Login status check page operation class instance
@@ -33,14 +33,14 @@ public class TestCookieCheck {
      * <p>
      * 每个测试方法（每条测试用例）执行前都会执行一次，用于调用浏览器工具类的静态方法获取浏览器实例对象以及实例化登录态检查页面操作类的对象<br>
      * Executes before each test method (test case) to:
-     * 1. Acquire browser instance via DriverUtils
+     * 1. Acquire WebDriver instance via DriverUtils
      * 2. Instantiate CookieCheckPageOperation object
      * </p>
      */
     @BeforeMethod
     public void getDriver() {
         //调用浏览器工具类的静态方法，获取浏览器对象，并打开登录态检查页
-        //Invokes DriverUtils to get browser instance and open login status check page
+        //Invokes DriverUtils to get WebDriver instance and open login status check page
         driver = DriverUtils.getDriver();
         driver.get("http://127.0.0.1:8080/cookie_check");
 

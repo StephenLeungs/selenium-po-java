@@ -1,4 +1,6 @@
-# ***此文档为中文版README指南，英文README指南请点击下方链接（English README available below）***
+# ***此文档为中文版README指南，英文README指南请点击下方链接***
+
+# ***（<mark>English README available below</mark>）***
 
 [English README Documentation](README.en.md)
 

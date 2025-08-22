@@ -1,6 +1,6 @@
 ## Project Introduction
 
-This project is an open-source demo of a WebUI automation testing framework based on **Java** and the **Page Object (PO) Model**, featuring:
+This project is an open-source demo of a WebUI automated testing framework based on **Java** and the **Page Object (PO) Model**, featuring:
 
 ✅ **Proven in Practice**: Frameworks using this encapsulation approach have been validated in medium-to-large projects at two companies.  
 ✅ **Strong Compatibility**: <span style="background:#ffeb3b;padding:2px 5px;border-radius:3px">Written based on JDK8, minimum compatibility JDK8</span>  

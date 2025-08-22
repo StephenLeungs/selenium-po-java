@@ -4,7 +4,7 @@ This project is an open-source demo of a WebUI automation testing framework base
 
 ✅ **Proven in Practice**: Frameworks using this encapsulation approach have been validated in medium-to-large projects at two companies.  
 ✅ **Strong Compatibility**: <span style="background:#ffeb3b;padding:2px 5px;border-radius:3px">Written based on JDK8, minimum compatibility JDK8</span>  
-✅ **Standardized Comments**: All classes and methods include bilingual (Chinese-English) comments following javadoc specifications.  
+✅ **Standardized Comments**: All classes and methods follow the Javadoc specification and include bilingual (Chinese and English) comments to facilitate understanding of their invocation and execution logic.  
 ✅ **Open Source License**: Licensed under GNU Affero GPL v3.0 and additional terms ([View Details](LICENSE))
 
 ### Comment Example

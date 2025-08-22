@@ -12,7 +12,7 @@
 
 ✅ **实战验证**：参照此封装方式的框架已通过两家公司中大型项目验证  
 ✅ **兼容性强**：<span style="background:#ffeb3b;padding:2px 5px;border-radius:3px">基于JDK8编写，最低兼容JDK8</span>  
-✅ **规范注释**：所有类和方法均参考javadoc规范，添加中英双语注释  
+✅ **规范注释**：所有类和方法均参考Javadoc规范，添加中英双语注释，以便于理解各个类和方法的调用及执行逻辑  
 ✅ **开源协议**：遵循GNU Affero GPL v3.0及附加条款([查看详情](LICENSE))
 
 ### 注释示例

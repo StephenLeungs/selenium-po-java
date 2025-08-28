@@ -80,7 +80,6 @@ public class TestCookieCheck {
             //调用浏览器工具类的静态方法，添加Cookie并刷新页面（Cookie来源是登录测试用例断言通过后获取的）
             //Adds cookies (retrieved from login test case) and refreshes page
             DriverUtils.addAllCookie(driver);
-            driver.navigate().refresh();
             Thread.sleep(1000);
 
             //点击登录态检查按钮 / Click login status check button

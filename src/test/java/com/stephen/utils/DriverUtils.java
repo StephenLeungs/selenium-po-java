@@ -97,8 +97,10 @@ public class DriverUtils {
      * @param driver 浏览器实例对象 / WebDriver instance
      */
     public static void addAllCookie(WebDriver driver){
+        driver.manage().deleteAllCookies();
         for (Cookie cookie : cookies) {
             driver.manage().addCookie(cookie);
         }
+        driver.navigate().refresh();
     }
 }
